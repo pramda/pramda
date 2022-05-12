@@ -1,13 +1,13 @@
-from typing import Callable, overload, TypeVar
+from typing import Callable, overload,  Union
 from functions import curry
 
-T = TypeVar('T', int, float)
-
+Numeric = Union[int, float]
 
 @overload
-def add(a: T) -> Callable[[T], T]: pass
+def add(a: Numeric) -> Callable[[Numeric], Numeric]:
+    pass
 
 
 @curry
-def add(a: T, b: T) -> T:
+def add(a: Numeric, b: Numeric) -> Numeric: 
     return a + b

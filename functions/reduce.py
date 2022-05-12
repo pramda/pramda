@@ -1,17 +1,18 @@
 from typing import Callable,  TypeVar, overload
 from functions.curry import curry
 
-T = TypeVar('T')
+AT = TypeVar('AT')
+RT = TypeVar('RT')
 
 
 @overload
-def reduce(func: Callable[[T], T]) -> Callable[[list[T]], T]:
+def reduce(func: Callable[[AT, AT], RT]) -> Callable[[list[AT]], RT]:
     pass
 
 
 @curry
-def reduce(func: Callable[[T], T], received: list[T]) -> T:
-    def loop(before_result: T) -> T:
+def reduce(func: Callable[[AT], AT], received: list[AT]) -> RT:
+    def loop(before_result: AT) -> RT:
         if len(received) == 0:
             return before_result
         return loop(func(before_result, received.pop(0)))

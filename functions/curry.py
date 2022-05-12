@@ -1,15 +1,11 @@
-from typing import Callable, ParamSpec, TypeVar
+from typing import Callable
 
 
-T = TypeVar('T')
-P = ParamSpec('P')
-
-
-def curry(func: Callable[P, T], left: int = None) -> Callable[P, T] | T:
+def curry(func: Callable, left: int = None) -> Callable:
     if left == None:
         left = func.__code__.co_argcount
 
-    def inner(*args: P.args, **kwargs: P.kwargs) -> T:
+    def inner(*args, **kwargs):
         if len(args) >= left:
             return func(*args, **kwargs)
 
