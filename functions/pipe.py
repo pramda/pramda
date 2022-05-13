@@ -1,13 +1,12 @@
-from typing import Callable, ParamSpec, TypeVar
+from typing import Callable
 
 
-T = TypeVar('T')
-P = ParamSpec('P')
+def pipe(*funcs_tuple: Callable) -> Callable:
+    funcs = list(funcs_tuple)
 
+    def loop(*args):
+        if len(funcs) == 1:
+            return funcs.pop(0)(*args)
+        return loop(funcs.pop(0)(*args))
 
-# TODO - pipe function
-def pipe(*funcs: Callable[P, T]):
-    def asdf(received):
-        for func in funcs:
-            func(received)
-    return asdf
+    return loop
