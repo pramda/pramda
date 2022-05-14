@@ -2,7 +2,7 @@ from typing import Callable
 
 
 def curry(func: Callable, left: int = None) -> Callable:
-    if left == None:
+    if left is None:
         left = func.__code__.co_argcount
 
     def inner(*args, **kwargs):
@@ -11,6 +11,7 @@ def curry(func: Callable, left: int = None) -> Callable:
 
         def next(*received, **kwreceived):
             return func(*(args + received), **(kwargs.update(kwreceived) or {}))
+
         return next
 
     return inner

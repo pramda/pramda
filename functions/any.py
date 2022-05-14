@@ -1,7 +1,7 @@
 from typing import Any, Callable, overload
-from functions import curry
-from functions import is_truethy
 
+from .curry import curry
+from .is_truthy import is_truthy
 
 
 @overload
@@ -12,6 +12,6 @@ def any(func: Callable[[Any], Any]) -> Callable[[list], bool]:
 @curry
 def any(func: Callable[[Any], Any], targets: list) -> bool:
     for t in targets:
-        if is_truethy(func(t)):
-            return True 
+        if is_truthy(func(t)):
+            return True
     return False
