@@ -1,4 +1,4 @@
-from typing import Any, Callable
+from typing import Any, Callable, overload
 from functions.curry import curry
 from functions.is_truthy import is_truethy
 
