@@ -1,4 +1,4 @@
-from functions import add
+from .add import add
 
 
 def test_answer():
