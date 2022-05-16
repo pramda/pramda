@@ -2,7 +2,7 @@ name: Test publish
 on:
   push:
     tags:
-      - "test_v*_test"
+      - "test_v*"
 
 jobs:
   publish:
