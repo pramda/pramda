@@ -8,7 +8,7 @@ RT = TypeVar("RT")
 
 
 @curry
-def map(func: Callable[[AT, AT], RT], arr: list[AT]) -> list[RT]:
+def map(func: Callable[[AT], RT], arr: list[AT]) -> list[RT]:
     def loop(before_items, item, left_items):
         if len(left_items) == 0:
             return before_items + [item]
