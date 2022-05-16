@@ -1,3 +1,4 @@
+from turtle import left
 from typing import Callable, List, TypeVar
 
 from .curry import curry
@@ -7,10 +8,10 @@ RT = TypeVar("RT")
 
 
 @curry
-def map(func: Callable[[AT], AT], arr: list[AT]) -> RT:
-    def loop(before_result: AT) -> RT:
-        if len(arr) == 0:
-            return before_result
-        return loop(func(before_result, arr.pop(0)))
+def map(func: Callable[[AT, AT], RT], arr: list[AT]) -> list[RT]:
+    def loop(before_items, item, left_items):
+        if len(left_items) == 0:
+            return before_items + [item]
+        return loop(before_items + [item], func(left_items[0]), left_items[1:])
 
-    return loop(arr.pop(0))
+    return loop([], func(arr[0]), arr[1:])
