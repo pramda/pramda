@@ -6,11 +6,6 @@ AT = TypeVar("AT")
 RT = TypeVar("RT")
 
 
-@overload
-def reduce(func: Callable[[AT, AT], RT]) -> Callable[[list[AT]], RT]:
-    pass
-
-
 @curry
 def reduce(func: Callable[[AT], AT], received: list[AT]) -> RT:
     def loop(before_result: AT) -> RT:

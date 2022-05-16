@@ -4,11 +4,6 @@ from .curry import curry
 from .is_truthy import is_truthy
 
 
-@overload
-def any(func: Callable[[Any], Any]) -> Callable[[list], bool]:
-    pass
-
-
 @curry
 def any(func: Callable[[Any], Any], targets: list) -> bool:
     for t in targets:
