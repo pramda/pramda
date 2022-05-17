@@ -1,15 +1,15 @@
+from .curry import curry
 from .cond import cond
 
-def _equal(a):
-    def inner(b):
-        return a == b
-    return inner
+@curry
+def _equal(a, b):
+    return a == b
 
-def _T():
+def _T(*_):
     return True
 
 def _always(a):
-    def inner():
+    def inner(*_):
         return a
     return inner
 
