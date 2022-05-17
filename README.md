@@ -60,6 +60,7 @@ example('2')('two') # 2 equals two
 ```
 
 gt
+
 ```py
 gt(1, 2)   # False
 gt(2, 2)   # False
@@ -68,6 +69,7 @@ gt(3, 2)   # True
 ```
 
 gte
+
 ```py
 gte(1, 2)   # False
 gte(2, 2)   # True
@@ -76,6 +78,7 @@ gte(3, 2)   # True
 ```
 
 lt
+
 ```py
 lt(1, 2)   # True
 lt(2, 2)   # False
@@ -84,6 +87,7 @@ lt(3, 2)   # False
 ```
 
 lte
+
 ```py
 lte(1, 2)   # True
 lte(2, 2)   # True
@@ -92,6 +96,7 @@ lte(3, 2)   # False
 ```
 
 map
+
 ```py
 multiplication = lambda x: x * 2
 map(multiplication, [4, 2, 3]) # [8, 4, 6]
@@ -99,6 +104,7 @@ map(multiplication)([4, 2, 3]) # [8, 4, 6]
 ```
 
 pipe
+
 ```py
 inc = lambda x: x + 1
 
@@ -106,3 +112,28 @@ pipe(inc, inc, inc, inc, inc)(1) # 6
 ```
 
 reduce
+
+```py
+reduce(add, [1, 2, 3])                 # 6
+reduce(concat_string, ["a", "b", "c"]) # "abc"
+```
+
+cond
+
+```py
+@curry
+equal(a, b):
+  return a == b
+
+test = cond(
+  [equal(1),   lambda _: 'a'],
+  [equal(10),  lambda _: 'b'],
+  [equal(50),  lambda _: 'c'],
+  [equal(100), lambda _: 'd'],
+)
+
+test(1)   # "a"
+test(10)  # "b"
+test(50)  # "c"
+test(100) # "d"
+```
