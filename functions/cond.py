@@ -1,10 +1,8 @@
 from typing import Any, Callable
 
-from .curry import curry
 from .is_truthy import is_truthy
 
 
-@curry
 def cond(pairs: list[tuple[Callable[[Any], bool], Callable[[Any], Any]]]) -> Callable:
     def inner(*args, **kwargs):
         for p in pairs:
