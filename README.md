@@ -2,6 +2,8 @@
 
 Pramda helps you implement functional programming in Python
 
+I didn't have a good functional programming tool like Ramda.js, so I made it.
+
 [ [Pypi](https://pypi.org/project/pramda/) ]
 
 ### Install

@@ -1,4 +1,4 @@
-from typing import Callable, TypeVar, overload
+from typing import Callable, TypeVar
 
 from .curry import curry
 

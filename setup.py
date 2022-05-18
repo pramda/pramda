@@ -21,7 +21,7 @@ setup(
     python_requires=">=3.10",
     license="MIT",
     url="http://github.com/pramda/pramda",
-    keywords=["function", "tool"],
+    keywords=["function", "tool", "ramda"],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "License :: OSI Approved :: MIT License",
