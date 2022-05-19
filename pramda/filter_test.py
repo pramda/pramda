@@ -1,5 +1,4 @@
-from pramda.gt import gt
-from .curry import curry
+from .gt import gt
 from .filter import filter
 
 
