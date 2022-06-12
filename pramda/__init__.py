@@ -7,3 +7,4 @@ from pramda.is_truthy import *
 from pramda.pipe import *
 from pramda.reduce import *
 from pramda.cond import *
+from pramda.filter import *
