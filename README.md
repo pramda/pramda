@@ -1,5 +1,9 @@
 # Pramda
 
+[![Downloads](https://static.pepy.tech/badge/pramda)](https://pepy.tech/project/pramda)
+[![Downloads](https://static.pepy.tech/badge/pramda/month)](https://pepy.tech/project/pramda)
+[![Downloads](https://static.pepy.tech/badge/pramda/week)](https://pepy.tech/project/pramda)
+
 Pramda helps you implement functional programming in Python
 
 I didn't have a good functional programming tool like Ramda.js, so I made it.
@@ -50,6 +54,13 @@ any(is_one)([2, 2, 2, 2])   # False
 any(is_one)([1.1, 1, 1, 1]) # True
 ```
 
+always
+
+```py
+pramda = always('pramda')
+pramda() # 'pramda'
+```
+
 curry
 
 ```py
@@ -59,6 +70,20 @@ def example(a, b):
 
 example('1', 'one') # 1 equals one
 example('2')('two') # 2 equals two
+```
+
+dec
+
+```py
+dec(10) # 9
+dec(1234) # 1233
+```
+
+inc
+
+```py
+inc(10) # 11
+inc(1234) # 1235
 ```
 
 gt
