@@ -5,7 +5,6 @@ description = "Pramda helps you implement functional programming in Python"
 authors = ["myuksal <jupyter@kakao.com>"]
 license = "MIT"
 readme = "README.md"
-dynamic = [ "classifiers" ]
 repository = "http://github.com/pramda/pramda"
 classifiers=[
     "Development Status :: 5 - Production/Stable",
