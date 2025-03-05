@@ -1,5 +1,4 @@
-from turtle import left
-from typing import Callable, List, TypeVar
+from typing import Callable, TypeVar
 
 from .curry import curry
 
