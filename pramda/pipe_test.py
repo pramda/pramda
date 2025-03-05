@@ -1,4 +1,4 @@
-from .pipe import pipe
+from pramda import pipe
 
 
 def _inc(x: int) -> int:

@@ -1,4 +1,4 @@
-from .reduce import reduce
+from pramda import reduce
 
 
 def _add(a, b):
