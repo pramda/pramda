@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pramda"
-version = "1.3.0"
+version = "1.4.0"
 description = "Pramda helps you implement functional programming in Python"
 authors = ["myuksal <jupyter@kakao.com>"]
 license = "MIT"
