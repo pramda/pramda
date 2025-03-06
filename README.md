@@ -54,6 +54,39 @@ any(is_one)([2, 2, 2, 2])   # False
 any(is_one)([1.1, 1, 1, 1]) # True
 ```
 
+all_pass
+
+```py
+is_even = lambda x: x % 2 == 0
+is_positive = lambda x: x > 0
+
+all_pass_pred = all_pass([is_even, is_positive])
+all_pass_pred(2)  # True because 2 is even and positive
+all_pass_pred(1)  # False because 1 is not even
+all_pass_pred(-2) # False because -2 is not positive
+
+is_divisible_by_3 = lambda x: x % 3 == 0
+all_pass([is_even, is_divisible_by_3])(6) # True, 6 is even and divisible by 3
+all_pass([is_even, is_divisible_by_3])(2) # False, 2 is even but not divisible by 3
+```
+
+any_pass
+
+```py
+is_even = lambda x: x % 2 == 0
+is_positive = lambda x: x > 0
+
+any_pass_pred = any_pass([is_even, is_positive])
+any_pass_pred(2)  # True because 2 is even
+any_pass_pred(1)  # True because 1 is positive
+any_pass_pred(-2) # False because -2 is neither even nor positive
+
+is_divisible_by_3 = lambda x: x % 3 == 0
+any_pass([is_even, is_divisible_by_3])(6) # True, 6 is even and divisible by 3
+any_pass([is_even, is_divisible_by_3])(2) # True, 2 is even
+any_pass([is_even, is_divisible_by_3])(5) # False, 5 is neither even nor divisible by 3
+```
+
 always
 
 ```py
